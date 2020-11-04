@@ -9,12 +9,12 @@ namespace FindMaximumNumber
     {
         static void Main(string[] args)
         {
-            int intOutput = new MaximumNumberCheck.GenricMaximum<int>(1, 2, 3).MaxMethod();
-            Console.WriteLine("Maximum of three integers: "+intOutput);
-            float floatOutput = new MaximumNumberCheck.GenricMaximum<float>(1.1f, 2.3f, 3.6f).MaxMethod();
-            Console.WriteLine("Maximum of three float numbers: "+floatOutput);
-            string stringOutput = new MaximumNumberCheck.GenricMaximum<string>("Apple", "Ball", "Gun").MaxMethod();
-            Console.WriteLine("Maximum of three strings: " + stringOutput);
+            int[] intArray = { 1, 2, 3, 4, 16 };
+            float[] floatArray = { 1.1f, 2.3f, 3.6f, 42.3f, 156.36f };
+            string[] stringArray = { "Happy", "Egg", "Lot", "Mercedes" };
+            new MaximumNumberCheck.GenericMaximum<int>(intArray).PrintMax();
+            new MaximumNumberCheck.GenericMaximum<float>(floatArray).PrintMax();
+            new MaximumNumberCheck.GenericMaximum<string>(stringArray).PrintMax();
         }
     }
 }
