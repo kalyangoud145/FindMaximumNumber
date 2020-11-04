@@ -2,11 +2,15 @@
 
 namespace FindMaximumNumber
 {
+    /// <summary>
+    /// Main class for implementation
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Test maximum problem");
+            int intOutput = MaximumNumberCheck.MaximumIntegerNumber(80, 40, 20);
+            Console.WriteLine("The maximum integer number is: " + intOutput);
         }
     }
 }
