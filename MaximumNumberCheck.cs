@@ -15,51 +15,42 @@ namespace FindMaximumNumber
         /// Generic class for finding maximum value
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        public class GenricMaximum<T> where T : IComparable
+        public class GenericMaximum<T> where T : IComparable
         {
-            public T firstValue, secondValue, thirdValue;
-            /// <summary>
-            /// Initializes a new instance of the <see cref="GenricMaximum{T}"/> class.
-            /// </summary>
-            /// <param name="firstValue">The first value.</param>
-            /// <param name="secondValue">The second value.</param>
-            /// <param name="thirdValue">The third value.</param>
-            public GenricMaximum(T firstValue, T secondValue, T thirdValue)
+            public T[] array;
+            public GenericMaximum(T[] array)
             {
-                this.firstValue = firstValue;
-                this.secondValue = secondValue;
-                this.thirdValue = thirdValue;
+                this.array = array;
             }
             /// <summary>
-            /// Logic for finding Maximum value.
+            /// Sorts the specified values.
             /// </summary>
-            /// <param name="firstValue">The first value.</param>
-            /// <param name="secondValue">The second value.</param>
-            /// <param name="thirdValue">The third value.</param>
+            /// <param name="values">The values.</param>
             /// <returns></returns>
-            /// <exception cref="Exception">All three values are same</exception>
-            public static T MaxValue(T firstValue, T secondValue, T thirdValue)
+            public T[] Sort(T[] values)
             {
-                if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
-                {
-                    return firstValue;
-                }
-                if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
-                {
-                    return secondValue;
-                }
-                if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
-                {
-                    return thirdValue;
-                }
-
-                throw new Exception("All three values are same");
+                Array.Sort(values);
+                return values;
             }
-            /// Returns maximum value
-            public T MaxMethod()
+            /// <summary>
+            /// Returns the maximum value
+            /// </summary>
+            /// <param name="values">The values.</param>
+            /// <returns></returns>
+            public T MaxValue(params T[] values)
             {
-                T max = GenricMaximum<T>.MaxValue(this.firstValue, this.secondValue, this.thirdValue);
-                return max;
+                T[] sortedArray = Sort(this.array);
+
+                return sortedArray[sortedArray.Length - 1];
+            }
+            /// <summary>
+            /// Prints the maximum value
+            /// </summary>
+            public void PrintMax()
+            {
+                var max = MaxValue(this.array);
+                Console.WriteLine("The maximum value is: " + max);
+
             }
         }
     }
