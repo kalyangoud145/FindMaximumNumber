@@ -58,6 +58,31 @@ namespace FindMaximumNumber
 
             throw new Exception("All three values are same");
         }
+        /// <summary>
+        ///Returns Maximum of the given  string numbers
+        /// </summary>
+        /// <param name="firstValue">The first value.</param>
+        /// <param name="secondValue">The second value.</param>
+        /// <param name="thirdValue">The third value.</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">All three values are same</exception>
+        public static string MaximumOfGivenStrings(string firstValue, string secondValue, string thirdValue)
+        {
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
+            {
+                return firstValue;
+            }
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
+            {
+                return secondValue;
+            }
+            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
+            {
+                return thirdValue;
+            }
+
+            throw new Exception("All three values are same");
+        }
 
     }
 }

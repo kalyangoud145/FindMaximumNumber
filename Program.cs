@@ -13,6 +13,8 @@ namespace FindMaximumNumber
             Console.WriteLine("The maximum integer number is: " + intOutput);
             float floatOutput = MaximumNumberCheck.MaximumFloatNumber(101.523f, 150.325f, 100.625f);
             Console.WriteLine("The maximum float number is: " + floatOutput);
+            string stringOutput = MaximumNumberCheck.MaximumOfGivenStrings("120", "126", "123");
+            Console.WriteLine("The maximum of Strings  is: " + stringOutput);
         }
     }
 }
