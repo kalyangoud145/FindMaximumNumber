@@ -50,15 +50,43 @@ namespace FindMaxNumberMSTest
         }
         ///TC 2.1
         /// <summary>
-        /// Givens the integer to find maximum flot given maximum int value at first position return expected value.
+        /// Givens the float to find maximum flot ,given maximum flot value at first position return expected value.
         /// </summary>
         [TestMethod]
-        public void Given_Integer_ToFindMaximumFloat_Given_MaximumIntValueAtFirstPosition_Should_ReturnExpectedValue()
+        public void Given_Float_ToFindMaximumFloat_Given_MaximumFloatValueAtFirstPosition_Should_ReturnExpectedValue()
         {
             //Arrange
             float expected = 10.15f;
             //Act
             float actual = MaximumNumberCheck.MaximumFloatNumber(10.15f, 9.25f, 8.20f);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        ///TC 2.2
+        /// <summary>
+        /// Givens the float to find maximum flot, given maximum float value at Second position return expected value.
+        /// </summary>
+        [TestMethod]
+        public void Given_Float_ToFindMaximumFloat_Given_MaximumFloatValueAtSecondPosition_Should_ReturnExpectedValue()
+        {
+            //Arrange
+            float expected = 79.25f;
+            //Act
+            float actual = MaximumNumberCheck.MaximumFloatNumber(10.15f, 79.25f, 8.20f);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        ///TC 2.3
+        /// <summary>
+        /// Givens the float to find maximum flot, given maximum float value at third position return expected value.
+        /// </summary>
+        [TestMethod]
+        public void Given_Float_ToFindMaximumFloat_Given_MaximumFloatValueAtThirdPosition_Should_ReturnExpectedValue()
+        {
+            //Arrange
+            float expected = 86.20f;
+            //Act
+            float actual = MaximumNumberCheck.MaximumFloatNumber(10.15f, 79.25f, 86.20f);
             //Assert
             Assert.AreEqual(expected, actual);
         }
