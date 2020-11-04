@@ -118,6 +118,20 @@ namespace FindMaxNumberMSTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        ///TC 3.3
+        /// <summary>
+        /// Givens the String  values to find maximum  ,given maximum string value at third position return expected value.
+        /// </summary>
+        [TestMethod]
+        public void Given_String_ToFindMaximumOfStringValue_Given_MaximumStringValueAtThirdPosition_Should_ReturnExpectedValue()
+        {
+            //Arrange
+            string expected = "kiwi";
+            //Act
+            string actual = MaximumNumberCheck.MaximumOfGivenStrings("apple", "guava", "kiwi");
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
     }
 }
