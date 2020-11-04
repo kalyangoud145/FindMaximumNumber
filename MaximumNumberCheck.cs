@@ -59,7 +59,7 @@ namespace FindMaximumNumber
             throw new Exception("All three values are same");
         }
         /// <summary>
-        ///Returns Maximum of the given  string numbers
+        ///Returns Maximum of the string number of given values
         /// </summary>
         /// <param name="firstValue">The first value.</param>
         /// <param name="secondValue">The second value.</param>
