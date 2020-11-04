@@ -34,6 +34,21 @@ namespace FindMaxNumberMSTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        ///TC 1.3
+        /// <summary>
+        /// Givens the integer to find maximum integer given maximum int value at first position should return expected value.
+        /// </summary>
+        [TestMethod]
+        public void Given_Integer_ToFindMaximumInteger_Given_MaximumIntValueAtThirdPosition_Should_ReturnExpectedValue()
+        {
+            //Arrange
+            int expected = 80;
+            //Act
+            int actual = MaximumNumberCheck.MaximumIntegerNumber(7, 15, 80);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
 
     }
 }
