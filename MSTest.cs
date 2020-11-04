@@ -6,132 +6,47 @@ namespace FindMaxNumberMSTest
     [TestClass]
     public class MSTest
     {
-        ///TC 1.1
+        ///TC 3.4
         /// <summary>
         /// Givens the integer to find maximum integer given maximum int value at first position return expected value.
         /// </summary>
         [TestMethod]
-        public void Given_Integer_ToFindMaximumInteger_Given_MaximumIntValueAtFirstPosition_Should_ReturnExpectedValue()
+        public void Given_Integer_ToFindMaximumIntegerUsingGenericClass_Given_MaximumIntValueAtFirstPosition_Should_ReturnExpectedValue()
         {
             //Arrange
             int expected = 10;
             //Act
-            int actual = MaximumNumberCheck.MaximumIntegerNumber(10, 9, 8);
+            int intOutput = new MaximumNumberCheck.GenricMaximum<int>(10, 2, 3).MaxMethod();
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, intOutput);
         }
-        ///TC 1.2
+        ///TC 3.5
         /// <summary>
-        /// Givens the integer to find maximum integer ,maximum number at second position return expected value.
+        /// Givens the float to find maximum float given maximum float value at first position return expected value.
         /// </summary>
         [TestMethod]
-        public void Given_Integer_ToFindMaximumInteger_MaximumNumber_AtSecondPosition_ReturnExpectedValue()
+        public void Given_Float_ToFindMaximumFloatUsingGenericClass_Given_MaximumFloatValueAtFirstPosition_Should_ReturnExpectedValue()
         {
             //Arrange
-            int expected = 10;
+            float expected = 10.20f;
             //Act
-            int actual = MaximumNumberCheck.MaximumIntegerNumber(7, 10, 8);
+            float floatOutput = new MaximumNumberCheck.GenricMaximum<float>(10.20f, 2.3f, 8.5f).MaxMethod();
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, floatOutput);
         }
-        ///TC 1.3
+        ///TC 3.6
         /// <summary>
-        /// Givens the integer to find maximum integer given maximum int value at first position should return expected value.
+        /// Givens the string to find maximum string given maximum string value at first position return expected value.
         /// </summary>
         [TestMethod]
-        public void Given_Integer_ToFindMaximumInteger_Given_MaximumIntValueAtThirdPosition_Should_ReturnExpectedValue()
+        public void Given_Stirng_ToFindMaximumStringUsingGenericClass_Given_MaximumStringValueAtFirstPosition_Should_ReturnExpectedValue()
         {
             //Arrange
-            int expected = 80;
+            string expected = "Spicy";
             //Act
-            int actual = MaximumNumberCheck.MaximumIntegerNumber(7, 15, 80);
+            string stringOutput = new MaximumNumberCheck.GenricMaximum<string>("Spicy", "Apple", "Bowl").MaxMethod();
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, stringOutput);
         }
-        ///TC 2.1
-        /// <summary>
-        /// Givens the float to find maximum flot ,given maximum flot value at first position return expected value.
-        /// </summary>
-        [TestMethod]
-        public void Given_Float_ToFindMaximumFloat_Given_MaximumFloatValueAtFirstPosition_Should_ReturnExpectedValue()
-        {
-            //Arrange
-            float expected = 10.15f;
-            //Act
-            float actual = MaximumNumberCheck.MaximumFloatNumber(10.15f, 9.25f, 8.20f);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        ///TC 2.2
-        /// <summary>
-        /// Givens the float to find maximum flot, given maximum float value at Second position return expected value.
-        /// </summary>
-        [TestMethod]
-        public void Given_Float_ToFindMaximumFloat_Given_MaximumFloatValueAtSecondPosition_Should_ReturnExpectedValue()
-        {
-            //Arrange
-            float expected = 79.25f;
-            //Act
-            float actual = MaximumNumberCheck.MaximumFloatNumber(10.15f, 79.25f, 8.20f);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        ///TC 2.3
-        /// <summary>
-        /// Givens the float to find maximum flot, given maximum float value at third position return expected value.
-        /// </summary>
-        [TestMethod]
-        public void Given_Float_ToFindMaximumFloat_Given_MaximumFloatValueAtThirdPosition_Should_ReturnExpectedValue()
-        {
-            //Arrange
-            float expected = 86.20f;
-            //Act
-            float actual = MaximumNumberCheck.MaximumFloatNumber(10.15f, 79.25f, 86.20f);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        ///TC 3.1
-        /// <summary>
-        /// Givens the String  values to find maximum  ,given maximum string value at first position return expected value.
-        /// </summary>
-        [TestMethod]
-        public void Given_String_ToFindMaximumOfStringValue_Given_MaximumStringValueAtFirstPosition_Should_ReturnExpectedValue()
-        {
-            //Arrange
-            string expected = "pot";
-            //Act
-            string actual = MaximumNumberCheck.MaximumOfGivenStrings("pot", "apple", "ball");
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        ///TC 3.2
-        /// <summary>
-        /// Givens the String  values to find maximum  ,given maximum string value at second position return expected value.
-        /// </summary>
-        [TestMethod]
-        public void Given_String_ToFindMaximumOfStringValue_Given_MaximumStringValueAtSecondPosition_Should_ReturnExpectedValue()
-        {
-            //Arrange
-            string expected = "monkey";
-            //Act
-            string actual = MaximumNumberCheck.MaximumOfGivenStrings("cat", "monkey", "goat");
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        ///TC 3.3
-        /// <summary>
-        /// Givens the String  values to find maximum  ,given maximum string value at third position return expected value.
-        /// </summary>
-        [TestMethod]
-        public void Given_String_ToFindMaximumOfStringValue_Given_MaximumStringValueAtThirdPosition_Should_ReturnExpectedValue()
-        {
-            //Arrange
-            string expected = "kiwi";
-            //Act
-            string actual = MaximumNumberCheck.MaximumOfGivenStrings("apple", "guava", "kiwi");
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
     }
 }
