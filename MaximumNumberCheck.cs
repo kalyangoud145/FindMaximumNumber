@@ -49,7 +49,8 @@ namespace FindMaximumNumber
             public void PrintMax()
             {
                 var max = MaxValue(this.array);
-                Console.WriteLine("The maximum value is: "+max);
+                Console.WriteLine("The maximum value is: " + max);
+
             }
         }
     }
