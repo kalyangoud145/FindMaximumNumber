@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FindMaximumNumber;
+using System;
 
 namespace FindMaxNumberMSTest
 {
@@ -36,7 +37,7 @@ namespace FindMaxNumberMSTest
         }
         ///TC 1.3
         /// <summary>
-        /// Givens the integer to find maximum integer given maximum int value at first position should return expected value.
+        /// Givens the integer to find maximum integer given maximum int value at Third position should return expected value.
         /// </summary>
         [TestMethod]
         public void Given_Integer_ToFindMaximumInteger_Given_MaximumIntValueAtThirdPosition_Should_ReturnExpectedValue()
@@ -47,6 +48,55 @@ namespace FindMaxNumberMSTest
             int actual = MaximumNumberCheck.MaximumIntegerNumber(7, 15, 80);
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+        ///TC 1.4
+        /// <summary>
+        /// Givens the negative integers to find maximum of integers should return expected value.
+        /// </summary>
+        [TestMethod]
+        public void Given_NegativeIntegers_ToFindMaximumIntegers_Should_Return_ExpectedValue()
+        {
+            //Arrange
+            int expected = -7;
+            //Act
+            int actual = MaximumNumberCheck.MaximumIntegerNumber(-7, -15, -80);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        ///TC 1.5
+        /// <summary>
+        /// Givens the two equal negative integers to find maximum integers should return expected value.
+        /// </summary>
+        [TestMethod]
+        public void Given_TwoEqualNegativeIntegers_ToFindMaximumIntegers_Should_Return_ExpectedValue()
+        {
+            //Arrange
+            int expected = -7;
+            //Act
+            int actual = MaximumNumberCheck.MaximumIntegerNumber(-7, -7, -80);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        ///TC 1.6
+        /// <summary>
+        /// Givens all integers are equal to find maximum value should return all values are equal exception.
+        /// </summary>
+        [TestMethod]
+        public void Given_AllIntegersAreEqual_ToFindMaximumValue_Should_Return_AllValuesAreEqual_Exception()
+        {
+            try
+            {
+                //Act
+                int actual = MaximumNumberCheck.MaximumIntegerNumber(-7, -7, -7);
+            }
+            catch (Exception e)
+            {
+                //Arrange
+                string expected = "All three values are same";
+                //Assert
+                Assert.AreEqual(expected, e.Message);
+            }
+
         }
         ///TC 2.1
         /// <summary>
@@ -89,6 +139,54 @@ namespace FindMaxNumberMSTest
             float actual = MaximumNumberCheck.MaximumFloatNumber(10.15f, 79.25f, 86.20f);
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// Givens the negative float to find maximum integers should return expected value.
+        /// </summary>
+        /// TC 2.4
+        [TestMethod]
+        public void Given_NegativeFloat_ToFindMaximumIntegers_Should_Return_ExpectedValue()
+        {
+            //Arrange
+            float expected = -7.02f;
+            //Act
+            float actual = MaximumNumberCheck.MaximumFloatNumber(-7.02f, -15.05f, -80.03f);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        /// <summary>
+        /// Givens the two equal negative float numbers to find maximum integers should return expected value.
+        /// </summary>
+        /// TC 2.5
+        [TestMethod]
+        public void Given_TwoEqualNegativeFloatNumbers_ToFindMaximumIntegers_Should_Return_ExpectedValue()
+        {
+            //Arrange
+            float expected = -7.0f;
+            //Act
+            float actual = MaximumNumberCheck.MaximumFloatNumber(-7.0f, -7.0f, -80.02f);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        ///TC 2.6
+        /// <summary>
+        /// Givens all float numbers are equal to find maximum value should return all values are equal exception.
+        /// </summary>
+        [TestMethod]
+        public void Given_AllFloatNumbersAreEqual_ToFindMaximumValue_Should_Return_AllValuesAreEqual_Exception()
+        {
+            try
+            {
+                //Act
+                float actual = MaximumNumberCheck.MaximumFloatNumber(-7, -7, -7);
+            }
+            catch (Exception e)
+            {
+                //Arrange
+                string expected = "All three values are same";
+                //Assert
+                Assert.AreEqual(expected, e.Message);
+            }
         }
     }
 }
